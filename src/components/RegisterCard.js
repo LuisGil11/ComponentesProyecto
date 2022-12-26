@@ -4,7 +4,7 @@ import { Button, Card, Container, Form, FormLabel } from "react-bootstrap";
 const RegisterCard = () => {
   return (
     <Container>
-      <Card className="mt-5">
+      <Card className="mt-5 mx-5">
         <Card.Header>
           <h3>Registrarse</h3>
         </Card.Header>

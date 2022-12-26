@@ -1,10 +1,11 @@
 import React from "react";
 import { Button, Card, Container, Form, FormLabel } from "react-bootstrap";
+import fotito from "../assets/gear.svg"
 
 const Login = () => {
   return (
     <Container>
-      <Card className="mt-5">
+      <Card className="mt-5 mx-5">
         <Card.Header>
           <h3>Login</h3>
         </Card.Header>
@@ -16,7 +17,9 @@ const Login = () => {
                 className="form-control"
                 placeholder="Enter email"
               />
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Email
+              <img src={fotito} alt='/'/>
+              </FormLabel>
             </div>
             <div className="mb-3 form-floating">
               <input
