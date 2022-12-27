@@ -14,6 +14,18 @@ import VerEjemplares from "./components/VerEjemplares";
 import CardN from "./components/CardN";
 import PagEj from "./components/PagEjemplar/PagEj";
 import EditarEj from "./components/PagEjemplar/EditarEj";
+import ModalExitoso from "./components/ModalExitoso";
+import { Button, Container, Modal, Row } from "react-bootstrap";
+import RangoJinete from "./components/RangoJinete";
+import CrearImplemento from "./components/Implementos/CrearImplemento";
+import CrearMedicamento from "./components/Medicamentos/CrearMedicamento";
+import CrearMotivoRetiro from "./components/Retiros/CrearMotivoRetiro";
+import CrearPelaje from "./components/Pelaje/CrearPelaje";
+import CrearArea from "./components/Area/CrearArea";
+import CrearRestaurante from "./components/Restaurantes/CrearRestaurante";
+import CrearCuerpoDiferencia from "./components/CuerpoDiferencia/CrearCuerpoDiferencia";
+import CrearCategoriaCarrera from "./components/CategoriaCarrera/CrearCategoriaCarrera";
+import CrearLugar from "./components/Lugar/CrearLugar";
 
 function App() {
   const Ejemplares = [
@@ -72,29 +84,31 @@ function App() {
       <SearchBar /> */}
       {/* <VerEjemplares ejemplares={Ejemplares} id="ejemplares" /> */}
       {/* <CardEjemplar ejemplares={Ejemplares} id="ejemplares" /> */}
-      <RegistrarEjemplar />
+      {/* <RegistrarEjemplar /> */}
       {/* <EditarEjemplar ejemplar={Ejemplares} /> */}
-      {/* <CrearRol />
-      {Ejemplares.map((ejemplar) => (
-        <CardN
-          key={ejemplar.nombre}
-          imagen={ejemplar.imagen}
-          nombre={ejemplar.nombre}
-          numero={ejemplar.numero}
-          pelaje={ejemplar.pelaje}
-          sexo={ejemplar.sexo}
-          padre={ejemplar.padre}
-          madre={ejemplar.madre}
-          stud={ejemplar.stud}
-          fecha_nac={ejemplar.fecha_nac}
-          entrenador={ejemplar.entrenador}
-          mejorPos={ejemplar.mejorPos}
-          cantidad2do={ejemplar.cantidad2do}
-          ganancia={ejemplar.ganancia}
-        />
-      ))} */}
+      {/* <CrearRol /> */}
+      {/* <Row className="row-cols-2 mx-5">
+        {Ejemplares.map((ejemplar) => (
+          <CardN
+            key={ejemplar.nombre}
+            imagen={ejemplar.imagen}
+            nombre={ejemplar.nombre}
+            numero={ejemplar.numero}
+            pelaje={ejemplar.pelaje}
+            sexo={ejemplar.sexo}
+            padre={ejemplar.padre}
+            madre={ejemplar.madre}
+            stud={ejemplar.stud}
+            fecha_nac={ejemplar.fecha_nac}
+            entrenador={ejemplar.entrenador}
+            mejorPos={ejemplar.mejorPos}
+            cantidad2do={ejemplar.cantidad2do}
+            ganancia={ejemplar.ganancia}
+          />
+        ))} 
+      </Row> */}
       {/* <PagEj /> */}
-      <EditarEj
+      {/* <EditarEj
         key={Ejemplares[0].nombre}
         imagen={Ejemplares[0].imagen}
         nombre={Ejemplares[0].nombre}
@@ -109,7 +123,17 @@ function App() {
         mejorPos={Ejemplares[0].mejorPos}
         cantidad2do={Ejemplares[0].cantidad2do}
         ganancia={Ejemplares[0].ganancia}
-      />
+      /> */}
+      <RangoJinete/>
+      <CrearImplemento/>
+      <CrearMedicamento/>
+      <CrearMotivoRetiro/>
+      <CrearPelaje/>
+      <CrearArea/>
+      <CrearRestaurante/>
+      <CrearCuerpoDiferencia/>
+      <CrearCategoriaCarrera/>
+      <CrearLugar/>
     </div>
   );
 }

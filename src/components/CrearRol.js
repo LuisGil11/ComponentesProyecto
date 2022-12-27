@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { Container, Card, Form, FormLabel, Button } from "react-bootstrap";
+import {
+  Container,
+  Card,
+  Form,
+  FormLabel,
+  Button,
+  FormSelect,
+  FormCheck,
+  Row,
+  Col,
+} from "react-bootstrap";
 import OpcionRol from "./OpcionRol";
 
 const CrearRol = () => {
@@ -54,6 +64,16 @@ const CrearRol = () => {
     MuestraInfo();
   };
 
+  let opciones = []
+
+  const handleData = (event) => {
+    event.preventDefault()
+    if (event.target.checked){
+      opciones.push(event.target.value)
+    }
+    console.log(opciones)
+  }
+
   return (
     <Container>
       <Card className="mx-5">
@@ -75,26 +95,49 @@ const CrearRol = () => {
               <div className="card-header">
                 <ul className="nav nav-tabs card-header-tabs">
                   <li className="nav-item">
-                    <Button onClick={CambiaOpcionCrear}>Crear</Button>
+                    <Button onClick={CambiaOpcionCrear} className="btn-light">
+                      Crear
+                    </Button>
                   </li>
                   <li className="nav-item">
-                    <Button onClick={CambiaOpcionLeer}>Leer</Button>
+                    <Button onClick={CambiaOpcionLeer} className="btn-light">
+                      Leer
+                    </Button>
                   </li>
                   <li className="nav-item">
-                    <Button onClick={CambiaOpcionActualizar}>Actualizar</Button>
+                    <Button
+                      onClick={CambiaOpcionActualizar}
+                      className="btn-light"
+                    >
+                      Actualizar
+                    </Button>
                   </li>
                   <li className="nav-item">
-                    <Button onClick={CambiaOpcionEliminar}>Eliminar</Button>
+                    <Button
+                      onClick={CambiaOpcionEliminar}
+                      className="btn-light"
+                    >
+                      Eliminar
+                    </Button>
                   </li>
                 </ul>
               </div>
               <Card.Body>
-                {info.map((t) => (
-                  <OpcionRol info={t} />
-                ))}
+                <Row>
+                  <FormCheck className="d-flex align-content-start" onSubmit={handleData}>
+                    <div className="text-start">
+                      {info.map((t) => (
+                        <OpcionRol info={t}/>
+                      ))}
+                    </div>
+                  </FormCheck>
+                </Row>
               </Card.Body>
             </div>
           </Form>
+          <Col className="text-right">
+            <Button className="mt-3 float-end">Crear Rol</Button>
+          </Col>
         </Card.Body>
       </Card>
     </Container>

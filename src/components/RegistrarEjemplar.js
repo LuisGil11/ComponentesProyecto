@@ -12,6 +12,7 @@ import {
   FormSelect,
   FormControl,
 } from "react-bootstrap";
+import ModalExitoso from "./ModalExitoso";
 
 const RegistrarEjemplar = () => {
   const [nombreEjemplar, setNombreEjemplar] = useState("");
@@ -47,6 +48,19 @@ const RegistrarEjemplar = () => {
       generoEjemplar,
       pelajeEjemplar
     );
+    setNombreEjemplar("");
+    setNumeroEjemplar("");
+    setTatlabialEjemplar("");
+    setPrecioEjemplar("");
+    setFecha_nacEjemplar("");
+    setPesoEjemplar("");
+    setPadreEjemplar("");
+    setMadreEjemplar("");
+    setImagenEjemplar("");
+    setPropietarioEjemplar("");
+    setHaraEjemplar("");
+    setPelajeEjemplar("");
+    setGeneroEjemplar("");
   };
   const handleNombre = (event) => {
     setNombreEjemplar(event.target.value);
@@ -87,6 +101,9 @@ const RegistrarEjemplar = () => {
   const handleGenero = (event) => {
     setGeneroEjemplar(event.target.value);
   };
+  const handleModal = () => {
+    <ModalExitoso show={true} />;
+  };
 
   return (
     <Container>
@@ -102,6 +119,7 @@ const RegistrarEjemplar = () => {
                 <Col md="6">
                   <div className="mb-3 form-floating">
                     <input
+                      value={nombreEjemplar}
                       type="text"
                       className="form-control"
                       placeholder="First name"
@@ -114,6 +132,7 @@ const RegistrarEjemplar = () => {
                 <Col md="6">
                   <div className="mb-3 form-floating">
                     <input
+                      value={numeroEjemplar}
                       type="number"
                       className="form-control"
                       placeholder="First name"
@@ -128,6 +147,7 @@ const RegistrarEjemplar = () => {
                 <Col md="6">
                   <div className="mb-3 form-floating">
                     <input
+                      value={tatlabialEjemplar}
                       type="number"
                       className="form-control"
                       placeholder="First name"
@@ -140,6 +160,7 @@ const RegistrarEjemplar = () => {
                 <Col>
                   <div className=" mb-3 form-floating">
                     <input
+                      value={precioEjemplar}
                       type="number"
                       className="form-control"
                       placeholder="First name"
@@ -154,6 +175,7 @@ const RegistrarEjemplar = () => {
                 <Col md="6">
                   <div className="mb-3 form-floating">
                     <input
+                      value={fecha_nacEjemplar}
                       type="date"
                       className="form-control"
                       placeholder="First name"
@@ -165,6 +187,7 @@ const RegistrarEjemplar = () => {
                 <Col md="6">
                   <div className="mb-3 form-floating">
                     <input
+                      value={pesoEjemplar}
                       type="number"
                       className="form-control"
                       placeholder="First name"
@@ -179,7 +202,7 @@ const RegistrarEjemplar = () => {
                 <Col className="col-6">
                   <FormGroup>
                     <FormLabel>Padre del Ejemplar</FormLabel>
-                    <FormSelect onChange={handlePadre}>
+                    <FormSelect onChange={handlePadre} value={padreEjemplar}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -189,7 +212,7 @@ const RegistrarEjemplar = () => {
                 <Col className="col-6">
                   <FormGroup>
                     <FormLabel>Madre del Ejemplar</FormLabel>
-                    <FormSelect onChange={handleMadre}>
+                    <FormSelect onChange={handleMadre} value={madreEjemplar}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -202,6 +225,7 @@ const RegistrarEjemplar = () => {
                 <Col>
                   <FormLabel>Imagen</FormLabel>
                   <input
+                    value={imagenEjemplar}
                     className="form-control"
                     type="file"
                     id="formFile"
@@ -211,7 +235,7 @@ const RegistrarEjemplar = () => {
                 <Col>
                   <FormGroup>
                     <FormLabel>Propietario</FormLabel>
-                    <FormSelect onChange={handlePropietario}>
+                    <FormSelect onChange={handlePropietario} value={propietarioEjemplar}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -226,7 +250,7 @@ const RegistrarEjemplar = () => {
                 <Col className="col-6">
                   <FormGroup>
                     <FormLabel>Hara de procedencia</FormLabel>
-                    <FormSelect onChange={handleHara}>
+                    <FormSelect onChange={handleHara} value={haraEjemplar}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -236,7 +260,7 @@ const RegistrarEjemplar = () => {
                 <Col>
                   <FormGroup>
                     <FormLabel>Pelaje</FormLabel>
-                    <FormSelect onChange={handlePelaje}>
+                    <FormSelect onChange={handlePelaje} value={pelajeEjemplar}>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -273,7 +297,12 @@ const RegistrarEjemplar = () => {
                   </FormCheck>
                 </Col>
               </Row>
-              <Button className="mb-4 mt-4 align" size="lg" type="submit">
+              <Button
+                className="mb-4 mt-4 align"
+                size="lg"
+                type="submit"
+                onClick={handleData}
+              >
                 Registrar
               </Button>
             </Form>
