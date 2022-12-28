@@ -25,8 +25,8 @@ import CrearRestaurante from "./components/Restaurantes/CrearRestaurante";
 import CrearCuerpoDiferencia from "./components/CuerpoDiferencia/CrearCuerpoDiferencia";
 import CrearCategoriaCarrera from "./components/CategoriaCarrera/CrearCategoriaCarrera";
 import CrearLugar from "./components/Lugar/CrearLugar";
-import { CardMedicamento } from "./components/Medicamentos/CardMedicamento";
-import { PagMedicamento } from "./components/Medicamentos/PagMedicamento";
+import { CardMedicamento } from "./components/CardMedImpRetiro";
+import { PagMedImpRetiro } from "./components/PagMedImpRetiro";
 
 function App() {
   const Ejemplares = [
@@ -106,6 +106,27 @@ function App() {
     },
   ];
 
+  const Implementos = [
+    {
+      nombre: "Gringolas",
+      descripcion: "Pa que el caballo no se me distraiga",
+      key: 5,
+    },
+    {
+      nombre: "zapatitos",
+      descripcion: "pa q no se joda las patas",
+      key: 6,
+    },
+  ];
+
+  const Retiros = [
+    {
+      nombre: "Se hizo verga",
+      descripcion: "Se la mamo el caballo",
+      key: 7,
+    },
+  ];
+
   return (
     <div>
       {/* <NavbarMenu />
@@ -170,7 +191,9 @@ function App() {
       <CrearCuerpoDiferencia />
       <CrearCategoriaCarrera />
       <CrearLugar /> */}
-      <PagMedicamento medicamentos={Medicamentos} />
+      <PagMedImpRetiro items={Medicamentos} titulo={"Medicamentos"} />
+      <PagMedImpRetiro items={Implementos} titulo={"Implementos"} />
+      <PagMedImpRetiro items={Retiros} titulo={"Retiros"} />
     </div>
   );
 }
