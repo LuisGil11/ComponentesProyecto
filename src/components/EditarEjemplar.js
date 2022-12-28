@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -16,14 +16,94 @@ import Card from "react-bootstrap/Card";
 import ModalEliminar from "./ModalEliminar";
 
 const ConsultaEjemplar = (props) => {
+  const [numeroEjemplar, setNumeroEjemplar] = useState(props.numero);
+  const [tatlabialEjemplar, setTatlabialEjemplar] = useState(props.tatLabial);
+  const [precioEjemplar, setPrecioEjemplar] = useState(props.precio);
+  const [fecha_nacEjemplar, setFecha_nacEjemplar] = useState(props.fecha_nac);
+  const [pesoEjemplar, setPesoEjemplar] = useState(props.peso);
+  const [padreEjemplar, setPadreEjemplar] = useState(props.padre);
+  const [madreEjemplar, setMadreEjemplar] = useState([props.madre]);
+  const [imagenEjemplar, setImagenEjemplar] = useState(props.imagen);
+  const [propietarioEjemplar, setPropietarioEjemplar] = useState(
+    props.propietario
+  );
+  const [haraEjemplar, setHaraEjemplar] = useState(props.hara);
+  const [pelajeEjemplar, setPelajeEjemplar] = useState(props.pelaje);
+  const [generoEjemplar, setGeneroEjemplar] = useState(props.genero);
+
+  const handleData = (event) => {
+    console.log(generoEjemplar);
+    event.preventDefault();
+    console.warn(
+      "all data",
+      numeroEjemplar,
+      tatlabialEjemplar,
+      precioEjemplar,
+      fecha_nacEjemplar,
+      pesoEjemplar,
+      padreEjemplar,
+      madreEjemplar,
+      imagenEjemplar,
+      propietarioEjemplar,
+      haraEjemplar,
+      generoEjemplar,
+      pelajeEjemplar
+    );
+    setNumeroEjemplar(numeroEjemplar);
+    setTatlabialEjemplar(tatlabialEjemplar);
+    setPrecioEjemplar(precioEjemplar);
+    setFecha_nacEjemplar(fecha_nacEjemplar);
+    setPesoEjemplar(pesoEjemplar);
+    setPadreEjemplar(padreEjemplar);
+    setMadreEjemplar(madreEjemplar);
+    setImagenEjemplar(imagenEjemplar);
+    setPropietarioEjemplar(propietarioEjemplar);
+    setHaraEjemplar(haraEjemplar);
+    setPelajeEjemplar(pelajeEjemplar);
+    setGeneroEjemplar(generoEjemplar);
+  };
+  const handleNumero = (event) => {
+    setNumeroEjemplar(event.target.value);
+  };
+  const handleTatlabial = (event) => {
+    setTatlabialEjemplar(event.target.value);
+  };
+  const handlePrecio = (event) => {
+    setPrecioEjemplar(event.target.value);
+  };
+  const handleFecha_nac = (event) => {
+    setFecha_nacEjemplar(event.target.value);
+  };
+  const handlePeso = (event) => {
+    setPesoEjemplar(event.target.value);
+  };
+  const handlePadre = (event) => {
+    setPadreEjemplar(event.target.value);
+  };
+  const handleMadre = (event) => {
+    setMadreEjemplar(event.target.value);
+  };
+  const handleImagen = (event) => {
+    setImagenEjemplar(event.target.value);
+  };
+  const handlePropietario = (event) => {
+    setPropietarioEjemplar(event.target.value);
+  };
+  const handleHara = (event) => {
+    setHaraEjemplar(event.target.value);
+  };
+  const handlePelaje = (event) => {
+    setPelajeEjemplar(event.target.value);
+  };
+  const handleGenero = (event) => {
+    setGeneroEjemplar(event.target.value);
+  };
   return (
     <div>
       <Container>
         <Card className="mb-3 mt-3 bg-info bg-opacity-25 mx-5">
           <Card.Header className="text-center d-flex justify-content-center align-content-center">
-            <h3 className="fw-bold">
-              {props.ejemplar[0].nombre}
-            </h3>
+            <h3 className="fw-bold">{props.ejemplar[0].nombre}</h3>
           </Card.Header>
           <Card.Body>
             <Row>
@@ -106,31 +186,7 @@ const ConsultaEjemplar = (props) => {
                   <h6 className="fw-bold mt-4" itemType="radio">
                     Genero:
                   </h6>
-                  <Form>
-                    <FormCheck className="form-check-inline">
-                      <input
-                        class="form-check-input mx-2"
-                        type="radio"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault1"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Masculino
-                      </label>
-                    </FormCheck>
-                    <FormCheck className="form-check-inline">
-                      <input
-                        class="form-check-input mx-2"
-                        type="radio"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault2"
-                        checked
-                      />
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Femenino
-                      </label>
-                    </FormCheck>
-                  </Form>
+                  <Form></Form>
                 </Row>
                 <Row className="mt-3">
                   <FormGroup>

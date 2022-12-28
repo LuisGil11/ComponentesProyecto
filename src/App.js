@@ -7,7 +7,6 @@ import RegisterCard from "./components/RegisterCard";
 import Login from "./components/Login";
 import SearchBar from "./components/SearchBar";
 import RegistrarEjemplar from "./components/RegistrarEjemplar";
-import EditarEjemplar from "./components/EditarEjemplar";
 import ConsultaEjemplar from "./components/ConsultaEjemplar";
 import CrearRol from "./components/CrearRol";
 import VerEjemplares from "./components/VerEjemplares";
@@ -26,6 +25,8 @@ import CrearRestaurante from "./components/Restaurantes/CrearRestaurante";
 import CrearCuerpoDiferencia from "./components/CuerpoDiferencia/CrearCuerpoDiferencia";
 import CrearCategoriaCarrera from "./components/CategoriaCarrera/CrearCategoriaCarrera";
 import CrearLugar from "./components/Lugar/CrearLugar";
+import { CardMedicamento } from "./components/Medicamentos/CardMedicamento";
+import { PagMedicamento } from "./components/Medicamentos/PagMedicamento";
 
 function App() {
   const Ejemplares = [
@@ -43,6 +44,12 @@ function App() {
       mejorPos: 2,
       cantidad2do: 23,
       ganancia: 200,
+      labial: 54,
+      precio: 256000,
+      peso: 200,
+      hara: "Los altos de Cogedes",
+      propietario: "Papito Suarez",
+      puesto: "12 (5)",
     },
     {
       imagen: caballo2,
@@ -73,6 +80,29 @@ function App() {
       mejorPos: 2,
       cantidad2do: 23,
       ganancia: 200,
+    },
+  ];
+
+  const Medicamentos = [
+    {
+      nombre: "Atamel",
+      descripcion: "Remedio pa q no le duela el coco al caballo",
+      key: 1,
+    },
+    {
+      nombre: "Teragrip",
+      descripcion: "Remedio pa los moquitos",
+      key: 2,
+    },
+    {
+      nombre: "Atamel",
+      descripcion: "Remedio pa q no le duela el coco al caballo",
+      key: 3,
+    },
+    {
+      nombre: "Teragrip",
+      descripcion: "Remedio pa los moquitos",
+      key: 4,
     },
   ];
 
@@ -123,17 +153,24 @@ function App() {
         mejorPos={Ejemplares[0].mejorPos}
         cantidad2do={Ejemplares[0].cantidad2do}
         ganancia={Ejemplares[0].ganancia}
-      /> */}
-      <RangoJinete/>
-      <CrearImplemento/>
-      <CrearMedicamento/>
-      <CrearMotivoRetiro/>
-      <CrearPelaje/>
-      <CrearArea/>
-      <CrearRestaurante/>
-      <CrearCuerpoDiferencia/>
-      <CrearCategoriaCarrera/>
-      <CrearLugar/>
+        tatLabial={Ejemplares[0].labial}
+        precio={Ejemplares[0].precio}
+        peso={Ejemplares[0].peso}
+        propietario={Ejemplares[0].propietario}
+        hara={Ejemplares[0].hara}
+        puesto={Ejemplares[0].puesto}
+      />
+      <RangoJinete />
+      <CrearImplemento />
+      <CrearMedicamento />
+      <CrearMotivoRetiro />
+      <CrearPelaje />
+      <CrearArea />
+      <CrearRestaurante />
+      <CrearCuerpoDiferencia />
+      <CrearCategoriaCarrera />
+      <CrearLugar /> */}
+      <PagMedicamento medicamentos={Medicamentos} />
     </div>
   );
 }

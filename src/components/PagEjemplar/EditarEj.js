@@ -21,23 +21,44 @@ import edit from "../../assets/editicon.png";
 import trash from "../../assets/trashicon.png";
 
 const EditarEj = (props) => {
-  const [nombreEjemplar, setNombreEjemplar] = useState("");
-  const [numeroEjemplar, setNumeroEjemplar] = useState("");
-  const [tatlabialEjemplar, setTatlabialEjemplar] = useState(0);
-  const [precioEjemplar, setPrecioEjemplar] = useState(0);
-  const [fecha_nacEjemplar, setFecha_nacEjemplar] = useState(0);
-  const [pesoEjemplar, setPesoEjemplar] = useState("");
-  const [padreEjemplar, setPadreEjemplar] = useState("");
-  const [madreEjemplar, setMadreEjemplar] = useState("");
-  const [imagenEjemplar, setImagenEjemplar] = useState("");
-  const [propietarioEjemplar, setPropietarioEjemplar] = useState("");
-  const [haraEjemplar, setHaraEjemplar] = useState("");
-  const [generoEjemplar, setGeneroEjemplar] = useState("");
-  const [studEjemplar, setStudEjemplar] = useState("");
-  const [pelajeEjemplar, setPelajeEjemplar] = useState("");
+  const [nombreEjemplar, setNombreEjemplar] = useState(props.nombre);
+  const [numeroEjemplar, setNumeroEjemplar] = useState(props.numero);
+  const [tatlabialEjemplar, setTatlabialEjemplar] = useState(props.tatLabial);
+  const [precioEjemplar, setPrecioEjemplar] = useState(props.precio);
+  const [fecha_nacEjemplar, setFecha_nacEjemplar] = useState(props.fecha_nac);
+  const [pesoEjemplar, setPesoEjemplar] = useState(props.peso);
+  const [padreEjemplar, setPadreEjemplar] = useState(props.padre);
+  const [madreEjemplar, setMadreEjemplar] = useState(props.madre);
+  const [imagenEjemplar, setImagenEjemplar] = useState(props.imagen);
+  const [propietarioEjemplar, setPropietarioEjemplar] = useState(
+    props.propietario
+  );
+  const [haraEjemplar, setHaraEjemplar] = useState(props.hara);
+  const [studEjemplar, setStudEjemplar] = useState(props.stud);
+  const [pelajeEjemplar, setPelajeEjemplar] = useState(props.pelaje);
+  const [puestoEjemplar, setPuestoEjemplar] = useState(props.puesto);
+
+  // key={Ejemplares[0].nombre}
+  // imagen={Ejemplares[0].imagen}
+  // nombre={Ejemplares[0].nombre}
+  // numero={Ejemplares[0].numero}
+  // pelaje={Ejemplares[0].pelaje}
+  // sexo={Ejemplares[0].sexo}
+  // padre={Ejemplares[0].padre}
+  // madre={Ejemplares[0].madre}
+  // stud={Ejemplares[0].stud}
+  // fecha_nac={Ejemplares[0].fecha_nac}
+  // entrenador={Ejemplares[0].entrenador}
+  // mejorPos={Ejemplares[0].mejorPos}
+  // cantidad2do={Ejemplares[0].cantidad2do}
+  // ganancia={Ejemplares[0].ganancia}
+  // tatLabial={Ejemplares[0].labial}
+  // precio={Ejemplares[0].precio}
+  // peso={Ejemplares[0].peso}
+  // propietario={Ejemplares[0].propietario}
+  // hara={Ejemplares[0].hara}
 
   const handleData = (event) => {
-    console.log(generoEjemplar);
     event.preventDefault();
     console.warn(
       "all data",
@@ -52,9 +73,9 @@ const EditarEj = (props) => {
       imagenEjemplar,
       propietarioEjemplar,
       haraEjemplar,
-      generoEjemplar,
       studEjemplar,
-      pelajeEjemplar
+      pelajeEjemplar,
+      puestoEjemplar
     );
   };
   const handleNombre = (event) => {
@@ -93,8 +114,8 @@ const EditarEj = (props) => {
   const handlePelaje = (event) => {
     setPelajeEjemplar(event.target.value);
   };
-  const handleGenero = (event) => {
-    setGeneroEjemplar(event.target.value);
+  const handlePuesto = (event) => {
+    setPuestoEjemplar(event.target.value);
   };
   const handleStud = (event) => {
     setStudEjemplar(event.target.value);
@@ -129,7 +150,11 @@ const EditarEj = (props) => {
                         <li className="mb-2 mb-xl-3 display-28">
                           <FormGroup>
                             <FormLabel className="fw-bold">Stud</FormLabel>
-                            <FormSelect onChange={handleStud}>
+                            <FormSelect
+                              onChange={handleStud}
+                              value={studEjemplar}
+                            >
+                              <option>{props.stud}</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -144,6 +169,7 @@ const EditarEj = (props) => {
                               Fecha de nacimiento
                             </FormLabel>
                             <input
+                              value={fecha_nacEjemplar}
                               type="date"
                               className="form-control"
                               onChange={handleFecha_nac}
@@ -153,6 +179,7 @@ const EditarEj = (props) => {
                         <li className="mb-2 mb-xl-3 display-28">
                           <FormLabel className="fw-bold">Numero</FormLabel>
                           <input
+                            value={numeroEjemplar}
                             type="number"
                             className="form-control"
                             onChange={handleNumero}
@@ -163,7 +190,11 @@ const EditarEj = (props) => {
                             <FormLabel className="fw-bold">
                               Hara de procedencia
                             </FormLabel>
-                            <FormSelect onChange={handleHara}>
+                            <FormSelect
+                              onChange={handleHara}
+                              value={haraEjemplar}
+                            >
+                              <option>{haraEjemplar}</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -175,7 +206,11 @@ const EditarEj = (props) => {
                         <li className="display-28">
                           <FormGroup>
                             <FormLabel className="fw-bold">Pelaje</FormLabel>
-                            <FormSelect onChange={handlePelaje}>
+                            <FormSelect
+                              onChange={handlePelaje}
+                              value={pelajeEjemplar}
+                            >
+                              <option>{pelajeEjemplar}</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -193,7 +228,11 @@ const EditarEj = (props) => {
                             <FormLabel className="fw-bold">
                               Padre del Ejemplar
                             </FormLabel>
-                            <FormSelect>
+                            <FormSelect
+                              onChange={handlePadre}
+                              value={padreEjemplar}
+                            >
+                              <option>{padreEjemplar}</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -207,7 +246,11 @@ const EditarEj = (props) => {
                             <FormLabel className="fw-bold">
                               Madre del Ejemplar
                             </FormLabel>
-                            <FormSelect>
+                            <FormSelect
+                              onChange={handleMadre}
+                              value={madreEjemplar}
+                            >
+                              <option>{madreEjemplar}</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -220,14 +263,24 @@ const EditarEj = (props) => {
                           <FormLabel className="fw-bold">Precio</FormLabel>
                           <InputGroup>
                             <InputGroup.Text>$</InputGroup.Text>
-                            <input type="number" className="form-control" />
+                            <input
+                              type="number"
+                              className="form-control"
+                              value={precioEjemplar}
+                              onChange={handlePrecio}
+                            />
                           </InputGroup>
                         </li>
                         <li className="mb-2 mb-xl-3 display-28">
                           <FormLabel className="fw-bold">Peso</FormLabel>
                           <InputGroup>
                             <InputGroup.Text>Kg</InputGroup.Text>
-                            <input type="number" className="form-control" />
+                            <input
+                              type="number"
+                              className="form-control"
+                              value={pesoEjemplar}
+                              onChange={handlePeso}
+                            />
                           </InputGroup>
                         </li>
                         <li className="mb-2 mb-xl-3 display-28">
@@ -235,7 +288,11 @@ const EditarEj = (props) => {
                             <FormLabel className="fw-bold">
                               Caballeriza (Puesto)
                             </FormLabel>
-                            <FormSelect>
+                            <FormSelect
+                              value={puestoEjemplar}
+                              onChange={handlePuesto}
+                            >
+                              <option>{puestoEjemplar}</option>
                               <option>1</option>
                               <option>2</option>
                               <option>3</option>
@@ -244,34 +301,13 @@ const EditarEj = (props) => {
                             </FormSelect>
                           </FormGroup>
                         </li>
-                        <li className="mb-2 mb-xl-3 display-28">
-                          <h6 className="fw-bold mt-4" itemType="radio">
-                            Genero:
-                          </h6>
-                          <FormCheck>
-                            <input
-                              className="form-check-input mx-2"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault1"
-                            />
-                            <label className="form-check-label">
-                              Masculino
-                            </label>
-                            <span> </span>
-                            <input
-                              className="form-check-input mx-2"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id="flexRadioDefault2"
-                            />
-                            <label className="form-check-label">Femenino</label>
-                          </FormCheck>
-                        </li>
                         <li>
                           <Col className="d-flex justify-content-end">
                             <div className="d-flexjustify-content-end mt-5">
-                              <Button className="btn btn-success text-light btn-sm mx-1">
+                              <Button
+                                className="btn btn-success text-light btn-sm mx-1"
+                                onClick={handleData}
+                              >
                                 Confirmar
                               </Button>
 
